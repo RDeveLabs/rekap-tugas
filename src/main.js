@@ -16,10 +16,8 @@ async function ambilData(kelasDipilih) {
         id_kelas: kelasDipilih,
       },
     });
-
     const data = response.data.file;
-    console.log(data);
-
+    
     let isiTabel = "";
 
     if (data && data.length > 0) {
