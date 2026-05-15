@@ -72,8 +72,9 @@
 }
 
 :root {
-  --background: #cf7171;
+  --background: #6FCF97;
   --foreground: #171717;
+  --header: #AAFFC7;
 }
 
 @theme inline {
@@ -93,6 +94,9 @@ body {
   color: var(--foreground);
   height: 100dvh;
   width: 100%;
+}
+.header{
+  background: var(--header);
 }
 
 .table, th, tr, td {

@@ -8,28 +8,29 @@
     <title>rekap-tugas</title>
   </head>
   <body class="min-h-full flex flex-col">
-    <div class="header flex justify-between items-center bg-amber-200 p-3">
+    <div class="header flex fixed w-full justify-between items-center p-3 shadow-xl">
       <div class="judul">
-        <h1 class="font-extrabold text-6xl leading-10 pt-3">
+        <h1 class="font-extrabold text-[52px] leading-10 pt-1">
           Logika Matematika
         </h1>
         <div class="flex items-center justify-between pr-0.5">
-          <div class="text-[22px] gap-10 flex pl-0.5 w-max">
+          <div class="text-[17px] gap-10 flex pl-0.5 w-max">
             <p>Rekap</p>
             <p>Pengumpulan Tugas</p>
           </div>
-          <div class="w-63 h-2 bg-black rounded-2xl"></div>
+          <div class="w-60 h-1.5 bg-black rounded-2xl"></div>
         </div>
       </div>
       <div class="class-dropdown flex p-2 gap-2 items-center">
-      <label for="kelas" class="text-xl">Pilih kelas</label>
+      <label for="kelas" class="text-xl">Kelas</label>
       <select name="kelas" id="kelas" class="text-xl pl-2 pr-2 rounded-md border-2">
         <option value="1">I251A</option>
         <option value="2">I251B</option>
       </select>
     </div>
     </div>
-    <div class="body p-3.5 flex flex-col gap-5">
+    <div class="body p-3.5 pt-30 flex flex-col gap-5">
+      <h1 class="text-4xl font-bold">Data kelas <span id="info-kelas"></span></h1>
       <p id="info" class="text-xl">Belum ada yang mengumpulkan</p>
       <table class="table">
         <thead>

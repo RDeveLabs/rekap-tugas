@@ -1,10 +1,16 @@
 import axios from "axios";
 
+const arrayKelas = ['I251A', 'I251B']
+
 let kelas = document.getElementById("kelas").value;
+document.getElementById("info-kelas").innerHTML = arrayKelas[kelas - 1];
+
 document.getElementById("kelas").addEventListener("change", (e) => {
-  let kelas = document.getElementById("kelas").value;
+  kelas = document.getElementById("kelas").value;
+  document.getElementById("info-kelas").innerHTML = arrayKelas[kelas - 1];
   ambilData(kelas);
 });
+
 
 async function ambilData(kelasDipilih) {
   try {
@@ -29,7 +35,7 @@ async function ambilData(kelasDipilih) {
       data.forEach((d, index) => {
         const ukuranKB = (d.ukuran_file / 1024).toFixed(1);
         const formatWaktu = new Date(d.waktu).toLocaleString("id-ID", {
-          weekday: "long", // Menampilkan nama hari secara lengkap (Senin, Selasa, dst.)
+          weekday: "long",
           day: "numeric",
           month: "long",
           year: "numeric",
