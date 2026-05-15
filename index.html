@@ -4,10 +4,47 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
     <title>rekap-tugas</title>
   </head>
-  <body>
-    <button id="tombol">tekan ini</button>
+  <body class="min-h-full flex flex-col">
+    <div class="header flex justify-between items-center bg-amber-200 p-3">
+      <div class="judul">
+        <h1 class="font-extrabold text-6xl leading-10 pt-3">
+          Logika Matematika
+        </h1>
+        <div class="flex items-center justify-between pr-0.5">
+          <div class="text-[22px] gap-10 flex pl-0.5 w-max">
+            <p>Rekap</p>
+            <p>Pengumpulan Tugas</p>
+          </div>
+          <div class="w-63 h-2 bg-black rounded-2xl"></div>
+        </div>
+      </div>
+    </div>
+    <div class="body p-3.5 flex flex-col gap-5">
+      <p id="info" class="text-xl">Belum ada yang mengumpulkan</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nomor</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Kelas</th>
+            <th>Pertemuan</th>
+            <th>Ukuran File</th>
+            <th>Tanggal Mengumpulkan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <span id="tabel">
+            <tr>
+              <th colspan="7">Belum ada data</th>
+            </tr>
+          </span>
+        </tbody>
+      </table>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
