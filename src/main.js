@@ -13,25 +13,42 @@ async function ambilData() {
 
     let isiTabel = "";
 
-    data.forEach((d, index) => {
-      isiTabel += `
+    if (data && data.length > 0) {
+      if (document.getElementById("info")) {
+        document.getElementById("info").innerText =
+          `${data.length} Mahasiswa sudah mengumpulkan`;
+      }
+
+      data.forEach((d, index) => {
+        const ukuranKB = (d.ukuran_file / 1024).toFixed(1);
+        isiTabel += `
+          <tr>
+            <th class="text-center">${index + 1}</th>
+            <td>${d.nama}</td>
+            <td class="text-center">${d.nim}</td>
+            <td class="text-center">${d.kelas.kelas}</td>
+            <td class="text-center">${d.dari_pertemuan} sampai ${d.sampai_pertemuan}</td>
+            <td class="text-center">${ukuranKB} KB</td>
+            <td class="text-center">${d.waktu}</td>
+          </tr>
+        `;
+      });
+      document.getElementById("tabel").innerHTML = isiTabel;
+    } else {
+      if (document.getElementById("info")) {
+        document.getElementById("info").innerText =
+          `Belum ada yang mengumpulkan`;
+      }
+      document.getElementById("tabel").innerHTML = `
         <tr>
-          <th>${index + 1}</th>
-          <td>${d.nama}</td>
-          <td>${d.nim}</td>
-          <td>${d.kelas}</td>
-          <td>${d.dari_pertemuan} sampai ${d.sampai_pertemuan}</td>
-          <td>${d.ukuran} KB</td>
-          <td>${d.waktu}</td>
+          <td colspan="7" class="text-center text-gray-500 py-4">Belum ada mahasiswa yang mengumpulkan tugas.</td>
         </tr>
       `;
-    });
-
-    document.getElementById("tabel").innerHTML = isiTabel;
-
+    }
   } catch (error) {
     console.error("Gagal mengambil data:", error);
-    document.getElementById("tabel").innerHTML = `<tr><td colspan="7" style="text-align:center; color:red;">Gagal memuat data</td></tr>`;
+    document.getElementById("tabel").innerHTML =
+      `<tr><td colspan="7" style="text-align:center; color:red;">Gagal memuat data</td></tr>`;
   }
 }
 
