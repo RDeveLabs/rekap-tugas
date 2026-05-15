@@ -22,15 +22,19 @@ async function ambilData() {
 
   const data = response.data;
   console.log(data);
+  data.map((d) => {
+    document.getElementById("tabel").innerHTML = `
+    <tr>
+      <th>${d.id}</th>
+      <td>${d.nama}</td>
+      <td>${d.nim}</td>
+      <td>${d.kelas}</td>
+      <td>${d.dari_pertemuan} sampai ${d.sampai_pertemuan}</td>
+      <td>${d.ukuran}</td>
+      <td>${d.waktu}</td>
+    </tr>;
+    `;
+  });
 }
 
 ambilData();
-{/* <tr>
-  <th>1</th>
-  <td>Raihan</td>
-  <td>12355</td>
-  <td>i251b</td>
-  <td>1 sampe 10</td>
-  <td>1000</td>
-  <td>senen</td>
-</tr>; */}
