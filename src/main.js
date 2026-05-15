@@ -11,6 +11,9 @@ document.getElementById("kelas").addEventListener("change", (e) => {
   ambilData(kelas);
 });
 
+document.getElementById("refresh").addEventListener("click", () => {
+  ambilData(kelas);
+})
 
 async function ambilData(kelasDipilih) {
   try {

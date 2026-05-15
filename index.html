@@ -31,7 +31,10 @@
     </div>
     <div class="body p-3.5 pt-30 flex flex-col gap-5">
       <h1 class="text-4xl font-bold">Data kelas <span id="info-kelas"></span></h1>
-      <p id="info" class="text-xl">Belum ada yang mengumpulkan</p>
+      <div class="deskripsi flex justify-between items-center">
+        <p id="info" class="text-xl">Belum ada yang mengumpulkan</p>
+        <button id="refresh" class="bg-(--header) p-1 pr-2 pl-2 rounded-md hover:bg-green-500 cursor-pointer">Refresh Data</button>
+      </div>
       <table class="table">
         <thead>
           <tr>
