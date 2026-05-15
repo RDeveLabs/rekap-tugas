@@ -21,6 +21,14 @@ async function ambilData() {
 
       data.forEach((d, index) => {
         const ukuranKB = (d.ukuran_file / 1024).toFixed(1);
+        const formatWaktu = new Date(d.waktu).toLocaleString("id-ID", {
+          weekday: "long", // Menampilkan nama hari secara lengkap (Senin, Selasa, dst.)
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
         isiTabel += `
           <tr>
             <th class="text-center">${index + 1}</th>
@@ -29,7 +37,7 @@ async function ambilData() {
             <td class="text-center">${d.kelas.kelas}</td>
             <td class="text-center">${d.dari_pertemuan} sampai ${d.sampai_pertemuan}</td>
             <td class="text-center">${ukuranKB} KB</td>
-            <td class="text-center">${d.waktu}</td>
+            <td class="text-center">${formatWaktu}</td>
           </tr>
         `;
       });
