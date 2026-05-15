@@ -20,7 +20,7 @@ async function ambilData() {
     },
   });
 
-  const data = response.data;
+  const data = response.data.file;
   console.log(data);
   data.map((d) => {
     document.getElementById("tabel").innerHTML = `
