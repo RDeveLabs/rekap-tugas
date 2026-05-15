@@ -1,10 +1,19 @@
 import axios from "axios";
 
-async function ambilData() {
+let kelas = document.getElementById("kelas").value;
+document.getElementById("kelas").addEventListener("change", (e) => {
+  let kelas = document.getElementById("kelas").value;
+  ambilData(kelas);
+});
+
+async function ambilData(kelasDipilih) {
   try {
     const response = await axios.get("https://api.rdevelabs.biz.id/data", {
       headers: {
         "x-rdl": "ramdeveloper",
+      },
+      params: {
+        id_kelas: kelasDipilih,
       },
     });
 
@@ -56,8 +65,8 @@ async function ambilData() {
   } catch (error) {
     console.error("Gagal mengambil data:", error);
     document.getElementById("tabel").innerHTML =
-      `<tr><td colspan="7" style="text-align:center; color:red;">Gagal memuat data</td></tr>`;
+      `<tr><td colspan="7" style="text-align:center;">Gagal memuat data</td></tr>`;
   }
 }
 
-ambilData();
+ambilData(kelas);
