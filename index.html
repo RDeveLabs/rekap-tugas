@@ -2,58 +2,82 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/style.css" />
     <title>rekap-tugas</title>
   </head>
-  <body class="min-h-full flex flex-col">
-    <div class="header flex fixed w-full justify-between items-center p-3 shadow-xl">
+  <body>
+    <div class="header fixed justify-between p-3 shadow-xl">
       <div class="judul">
-        <h1 class="font-extrabold text-[52px] leading-10 pt-1">
-          Logika Matematika
-        </h1>
+        <h1 class="font-extrabold pt-1">Logika Matematika</h1>
         <div class="flex items-center justify-between pr-0.5">
-          <div class="text-[17px] gap-10 flex pl-0.5 w-max">
+          <div class="judul-kedua flex pl-0.5 w-max">
             <p>Rekap</p>
-            <p>Pengumpulan Tugas</p>
+            <p>Pengumpulan Tugas Logika MTK</p>
           </div>
-          <div class="w-60 h-1.5 bg-black rounded-2xl"></div>
+          <div class="dekor w-36 h-1.5 bg-black rounded-2xl"></div>
         </div>
       </div>
-      <div class="class-dropdown flex p-2 gap-2 items-center">
-      <label for="kelas" class="text-xl">Kelas</label>
-      <select name="kelas" id="kelas" class="text-xl pl-2 pr-2 rounded-md border-2">
-        <option value="1">I251A</option>
-        <option value="2">I251B</option>
-      </select>
-    </div>
+      <div class="class-dropdown flex gap-2 items-center">
+        <label for="kelas" class="kelas font-size">Kelas</label>
+        <select
+          name="kelas"
+          id="kelas"
+          class="drop-down font-size pl-1 pr-1 rounded-md border-2"
+        >
+          <option value="1">I251A</option>
+          <option value="2">I251B</option>
+        </select>
+      </div>
     </div>
     <div class="body p-3.5 pt-30 flex flex-col gap-5">
-      <h1 class="text-4xl font-bold">Data kelas <span id="info-kelas"></span></h1>
+      <h1 class="text-4xl font-bold">
+        Data kelas <span id="info-kelas"></span>
+      </h1>
       <div class="deskripsi flex justify-between items-center">
-        <p id="info" class="text-xl">Belum ada yang mengumpulkan</p>
-        <button id="refresh" class="bg-(--header) p-1 pr-2 pl-2 rounded-md hover:bg-green-500 cursor-pointer">Refresh Data</button>
+        <p id="info" class="font-size">Belum ada yang mengumpulkan</p>
+        <button
+          id="refresh"
+          class="font-size bg-(--header) p-1 pr-2 pl-2 rounded-md hover:bg-green-500 cursor-pointer"
+        >
+          <div class="teks-tombol">
+            Refresh Data
+          </div>
+          <img class="icon-tombol" src="./src/assets/img/reload.svg" alt="" width="20">
+        </button>
       </div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Nomor</th>
-            <th>Nama</th>
-            <th>NIM</th>
-            <th>Kelas</th>
-            <th>Pertemuan</th>
-            <th>Ukuran File</th>
-            <th>Tanggal Mengumpulkan</th>
-          </tr>
-        </thead>
-        <tbody id="tabel">
-          <tr>
-            <th colspan="7">Belum ada data</th>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table">
+        <table>
+          <thead>
+            <tr>
+              <th>Nomor</th>
+              <th>Nama</th>
+              <th>NIM</th>
+              <th>Kelas</th>
+              <th>Pertemuan</th>
+              <th>Ukuran File</th>
+              <th>Tanggal Mengumpulkan</th>
+            </tr>
+          </thead>
+          <tbody id="tabel">
+            <tr>
+              <th colspan="7">Belum ada data</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <script
+      src="https://example.com/fontawesome/v7.0.1/js/fontawesome.js"
+      data-auto-replace-svg="nest"
+    ></script>
+    <script src="https://example.com/fontawesome/v7.0.1/js/solid.js"></script>
+    <script src="https://example.com/fontawesome/v7.0.1/js/brands.js"></script>
+
+    <!-- <script type="module" src="/src/main.js"></script> -->
   </body>
 </html>

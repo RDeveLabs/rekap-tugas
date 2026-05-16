@@ -72,9 +72,9 @@
 }
 
 :root {
-  --background: #6FCF97;
+  --background: #6fcf97;
   --foreground: #171717;
-  --header: #AAFFC7;
+  --header: #aaffc7;
 }
 
 @theme inline {
@@ -93,21 +93,195 @@ body {
   background: var(--background);
   color: var(--foreground);
   height: 100dvh;
-  width: 100%;
+  max-width: 100dvw;
+  overflow: hidden;
 }
-.header{
-  background: var(--header);
+.body {
+  max-width: 100dvw;
+  max-height: 100dvh;
+  overflow: hidden;
 }
 
-.table, th, tr, td {
+.header {
+  background: var(--header);
+  width: 100%;
+  display: flex;
+}
+
+.judul h1 {
+  font-size: 52px;
+  line-height: 40px;
+}
+
+.judul-kedua {
+  font-size: 17px;
+  line-height: 19px;
+  gap: 40px;
+}
+
+.dekor {
+  display: block;
+}
+
+.class-dropdown {
+  padding: 8px;
+}
+
+.table {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
   border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+.table table {
+  width: 100%;
+  height: max-content;
   border-collapse: none;
 }
 
-.table td{
+th,
+tr,
+td {
   padding: 0 20px;
+  border: 1px solid #000;
 }
 
-button{
+button {
   font-size: 20px;
+}
+
+.font-size {
+  font-size: 20px;
+}
+
+.teks-tombol {
+  display: block;
+}
+.icon-tombol {
+  display: none;
+}
+
+@media (width <= 1400px) {
+  .table {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    box-sizing: border-box;
+  }
+  .table table {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (width <= 1200px) {
+  .table {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    box-sizing: border-box;
+  }
+  .table table {
+    width: max-content;
+    height: max-content;
+  }
+}
+
+@media (width <= 730px) {
+  .dekor {
+    display: none;
+  }
+  .header {
+    display: flex;
+    /* flex-direction: column; */
+  }
+  .judul h1 {
+    line-height: 30px;
+    font-size: 40px;
+  }
+  .judul-kedua {
+    padding-left: 73px;
+    gap: 6px;
+    line-height: 17px;
+    font-size: 16.8px;
+  }
+  .kelas {
+    display: none;
+  }
+}
+
+@media (width <= 530px) {
+  .header {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .judul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .judul h1 {
+    line-height: 30px;
+    font-size: 38px;
+  }
+  .judul-kedua {
+    padding-left: 71px;
+    gap: 6px;
+    line-height: 17px;
+    font-size: 16px;
+  }
+  .kelas {
+    display: block;
+  }
+  .drop-down {
+    width: 100%;
+  }
+  .class-dropdown {
+    padding: 0;
+  }
+  .body {
+    padding-top: 140px;
+  }
+  .font-size {
+    font-size: 16px;
+  }
+  .teks-tombol {
+    display: none;
+  }
+  .icon-tombol {
+    display: block;
+  }
+}
+
+@media (width <= 410px) {
+  .header {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+  }
+  .judul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .judul h1 {
+    line-height: 23px;
+    font-size: 33px;
+  }
+  .judul-kedua {
+    padding-left: 62.5px;
+    gap: 6px;
+    line-height: 17px;
+    font-size: 13.84px;
+  }
+  .kelas {
+    display: block;
+  }
 }
