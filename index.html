@@ -44,31 +44,17 @@
           id="refresh"
           class="font-size bg-(--header) p-1 pr-2 pl-2 rounded-md hover:bg-green-500 cursor-pointer"
         >
-          <div class="teks-tombol">
-            Refresh Data
-          </div>
-          <img class="icon-tombol" src="./src/assets/img/reload.svg" alt="" width="20">
+          <div class="teks-tombol">Refresh Data</div>
+          <img
+            class="icon-tombol"
+            src="./src/assets/img/reload.svg"
+            alt=""
+            width="20"
+          />
         </button>
       </div>
-      <div class="table">
-        <table>
-          <thead>
-            <tr>
-              <th>Nomor</th>
-              <th>Nama</th>
-              <th>NIM</th>
-              <th>Kelas</th>
-              <th>Pertemuan</th>
-              <th>Ukuran File</th>
-              <th>Tanggal Mengumpulkan</th>
-            </tr>
-          </thead>
-          <tbody id="tabel">
-            <tr>
-              <th colspan="7">Belum ada data</th>
-            </tr>
-          </tbody>
-        </table>
+      <div class="card flex gap-2 p-2 bg-amber-50 w-full rounded-md">
+        <div>Belum ada data</div>
       </div>
     </div>
     <script type="module" src="/src/main.js"></script>

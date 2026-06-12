@@ -46,24 +46,24 @@ async function ambilData(kelasDipilih) {
           minute: "2-digit",
         });
         isiTabel += `
-          <tr>
-            <th class="text-center">${index + 1}</th>
-            <td>${d.nama}</td>
-            <td class="text-center">${d.nim}</td>
-            <td class="text-center">${d.kelas.kelas}</td>
-            <td class="text-center">${d.dari_pertemuan} sampai ${d.sampai_pertemuan}</td>
-            <td class="text-center">${ukuranKB} KB</td>
-            <td class="text-center">${formatWaktu}</td>
-          </tr>
+          <h2>${index + 1}</h2>
+         <div>
+           <h1 class="font-semibold text-xl">
+             ${d.nama} ( ${d.nim} )
+           </h1>
+           <p>${d.kelas.kelas}</p>
+           <p>${d.pertemuan}</p>
+           <p>${formatWaktu}</p>
+         </div>
         `;
       });
-      document.getElementById("tabel").innerHTML = isiTabel;
+      document.getElementById("card").innerHTML = isiTabel;
     } else {
       if (document.getElementById("info")) {
         document.getElementById("info").innerText =
           `Belum ada yang mengumpulkan`;
       }
-      document.getElementById("tabel").innerHTML = `
+      document.getElementById("card").innerHTML = `
         <tr>
           <td colspan="7" class="text-center text-gray-500 py-4">Belum ada mahasiswa yang mengumpulkan tugas.</td>
         </tr>
