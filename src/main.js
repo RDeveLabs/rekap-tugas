@@ -45,18 +45,23 @@ async function ambilData(kelasDipilih) {
           hour: "2-digit",
           minute: "2-digit",
         });
+        const nama = d.nama.replace(/\b[a-z]/g, (match) => match.toUpperCase());
         isiTabel += `
           <h2>${index + 1}</h2>
          <div>
            <h1 class="font-semibold text-xl">
-             ${d.nama} ( ${d.nim} )
+             ${nama}
            </h1>
-           <p>${d.kelas.kelas}</p>
-           <p>${d.pertemuan}</p>
+           <h1 class="font-semibold text-md">
+             ${d.nim}
+           </h1>
+           <p>Pertemuan ${d.pertemuan}</p>
            <p>${formatWaktu}</p>
          </div>
         `;
       });
+
+      
       document.getElementById("card").innerHTML = isiTabel;
     } else {
       if (document.getElementById("info")) {
