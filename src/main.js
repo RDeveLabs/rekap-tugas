@@ -47,7 +47,7 @@ async function ambilData(kelasDipilih) {
         });
         const nama = d.nama.replace(/\b[a-z]/g, (match) => match.toUpperCase());
         isiTabel += `
-          <div>
+          <div class="flex justify-between gap-2 p-2 pl-3 pr-4 bg-amber-50 w-full rounded-md">
             <div>
               <h1 class="font-bold text-xl">
                 ${nama}
