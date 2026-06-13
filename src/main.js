@@ -70,9 +70,11 @@ async function ambilData(kelasDipilih) {
           `Belum ada yang mengumpulkan`;
       }
       document.getElementById("card").innerHTML = `
-        <tr>
-          <td colspan="7" class="text-center text-gray-500 py-4">Belum ada mahasiswa yang mengumpulkan tugas.</td>
-        </tr>
+        <div class="flex justify-between gap-2 p-2 pl-3 pr-4 bg-amber-50 w-full rounded-md">
+              <h1 class="font-bold text-xl">
+                Belum ada yang mengumpulkan tugas
+              </h1>
+          </div>
       `;
     }
   } catch (error) {
