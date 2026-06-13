@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const arrayKelas = ['I251A', 'I251B']
+const arrayKelas = ["I251A", "I251B"];
 
 let kelas = document.getElementById("kelas").value;
 document.getElementById("info-kelas").innerHTML = arrayKelas[kelas - 1];
@@ -13,7 +13,7 @@ document.getElementById("kelas").addEventListener("change", (e) => {
 
 document.getElementById("refresh").addEventListener("click", () => {
   ambilData(kelas);
-})
+});
 
 async function ambilData(kelasDipilih) {
   try {
@@ -26,7 +26,7 @@ async function ambilData(kelasDipilih) {
       },
     });
     const data = response.data.file;
-    
+
     let isiTabel = "";
 
     if (data && data.length > 0) {
@@ -48,20 +48,21 @@ async function ambilData(kelasDipilih) {
         const nama = d.nama.replace(/\b[a-z]/g, (match) => match.toUpperCase());
         isiTabel += `
           <div>
-          <h1 class="font-bold text-xl">
-            ${nama}
-          </h1>
-          <h1 class="font-semibold text-md">
-            ${d.nim}
-          </h1>
-          <p>Pertemuan ${d.pertemuan}</p>
-          <p>${formatWaktu}</p>
-        </div>
-        <h2>#${index + 1}</h2>
+            <div>
+              <h1 class="font-bold text-xl">
+                ${nama}
+              </h1>
+              <h1 class="font-semibold text-md">
+                ${d.nim}
+              </h1>
+              <p>Pertemuan ${d.pertemuan}</p>
+              <p>${formatWaktu}</p>
+            </div>
+            <h2>#${index + 1}</h2>
+          </div>
         `;
       });
 
-      
       document.getElementById("card").innerHTML = isiTabel;
     } else {
       if (document.getElementById("info")) {
