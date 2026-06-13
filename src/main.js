@@ -47,17 +47,17 @@ async function ambilData(kelasDipilih) {
         });
         const nama = d.nama.replace(/\b[a-z]/g, (match) => match.toUpperCase());
         isiTabel += `
-          <h2>${index + 1}</h2>
-         <div>
-           <h1 class="font-semibold text-xl">
-             ${nama}
-           </h1>
-           <h1 class="font-semibold text-md">
-             ${d.nim}
-           </h1>
-           <p>Pertemuan ${d.pertemuan}</p>
-           <p>${formatWaktu}</p>
-         </div>
+          <div>
+          <h1 class="font-semibold text-xl">
+            ${nama}
+          </h1>
+          <h1 class="font-semibold text-md">
+            ${d.nim}
+          </h1>
+          <p>Pertemuan ${d.pertemuan}</p>
+          <p>${formatWaktu}</p>
+        </div>
+        <h2>#${index + 1}</h2>
         `;
       });
 
